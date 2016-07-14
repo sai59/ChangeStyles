@@ -1,0 +1,2 @@
+var properties = <%= @style.properties.to_json.html_safe%>;
+$(document).change_styles(properties);

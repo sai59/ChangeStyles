@@ -1,0 +1,34 @@
+<%= form_for @style, url: update_styles_path(@style), method: :put, :html => { :class => "form-horizontal style" }, :remote => true do |f| %>
+
+  <div class="form-group">
+    <%= f.label :header_color, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :header_color, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :footer_color, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :footer_color, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :font_family, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :font_family, font_family_options, :selected_key => f.object.font_family, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+<% end %>
